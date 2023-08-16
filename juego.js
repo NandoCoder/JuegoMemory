@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Evento para reiniciar el juego al hacer clic en el boton exit
   exitButton.addEventListener("click", resetGame);
 
-  // Voltear una carta
+  // Voltea una carta
   function flipCard(card) {
     card.classList.add("flipped");
     flippedCards++;
@@ -102,6 +102,17 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
           firstFlippedCard.classList.remove("flipped");
           secondFlippedCard.classList.remove("flipped");
+
+          // Agrega la clase "shake" para la animación de vibración
+          firstFlippedCard.classList.add("shake");
+          secondFlippedCard.classList.add("shake");
+
+          // Remueve la clase "shake" después de la animación
+          setTimeout(() => {
+            firstFlippedCard.classList.remove("shake");
+            secondFlippedCard.classList.remove("shake");
+          }, 400);
+
           flippedCards = 0;
           canFlip = true;
         }, 1000);
@@ -109,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Agregar event listeners a las cartas
+  // Agrega event listeners a las cartas
   function attachCardEventListeners() {
     const cards = document.querySelectorAll(".card");
     cards.forEach((card) => {
