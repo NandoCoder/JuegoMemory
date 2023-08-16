@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function resetGame() {
     stopTimer();
     elapsedTime = 0;
+    timerText.textContent = "00:00";
     timerContainer.style.display = "none";
     startButton.style.display = "block";
     exitButton.style.display = "none";
