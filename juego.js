@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Evento para iniciar el juego al hacer clic en el boton "Comenzar"
   startButton.addEventListener("click", () => {
     resetGame();
-    updateScoreText();
+
     timerContainer.style.display = "block";
     exitButton.style.display = "block";
     startButton.style.display = "none";
