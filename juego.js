@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let secondFlippedCard = null;
   let elapsedTime = 0;
   let timerInterval = null;
-  let score = 0;
 
   // Actualizar el texto del temporizador
   function updateTimerText() {
@@ -67,26 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
     firstFlippedCard = null;
     secondFlippedCard = null;
     canFlip = true;
-    score = 0;
-  }
-
-  function updateScoreText() {
-    const scoreTextElement = document.querySelector(".score-text");
-    scoreTextElement.textContent = score;
-  }
-
-  function increaseScore(timeTakenMillis) {
-    const baseScore = 500;
-    const maxTimeMillis = 1000; // Tiempo máximo en milisegundos
-
-    // Calcula el factor de ajuste basado en el tiempo tomado
-    const timeFactor = Math.max(0, 1 - timeTakenMillis / maxTimeMillis);
-
-    // Calcula el puntaje basado en el factor de tiempo
-    const scoreIncrease = Math.floor(baseScore * timeFactor);
-
-    score += scoreIncrease;
-    updateScoreText();
   }
 
   // Evento para reiniciar el juego al hacer clic en el boton exit
@@ -115,10 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
           if (matchedPairs === images.length) {
             stopTimer();
           }
-
-          // Calcula el tiempo tomado en segundos
-          const timeTaken = elapsedTime;
-          increaseScore(timeTaken); // Llama a la función de aumento de puntaje con el tiempo tomado
 
           flippedCards = 0;
           canFlip = true;

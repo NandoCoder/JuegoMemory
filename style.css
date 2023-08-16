@@ -159,29 +159,3 @@ body {
   background-color: #e74d4d;
   color: #fff;
 }
-
-.score-container {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  right: 200px;
-  transform: translate(0, -50%);
-  color: #fff;
-  font-size: 18px;
-}
-
-.timer-icon {
-  width: 200px;
-  margin-right: 10px;
-  position: relative;
-}
-
-.score-text {
-  position: absolute;
-  top: 71%;
-  left: 48%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
-  font-weight: bold;
-}
