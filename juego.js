@@ -98,6 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =====================STAGE TWO========================== */
   function stageTwo() {
     // Mostrar elementos necesarios y ocultar otros
+    elapsedTime = 0;
+    timerText.textContent = "00:00";
     timerContainer.style.display = "block";
     exitButton.style.display = "block";
     startButton.style.display = "none";
